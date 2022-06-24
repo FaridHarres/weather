@@ -52,3 +52,8 @@ a {
 .deletepicto{
   color: #FFBF43
 }
+
+#worldmap { 
+  height: 300px; 
+  margin-bottom: 10px;
+}

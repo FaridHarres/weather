@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+  
   <title>WeatherApp</title>
 </head>
 
@@ -19,7 +24,7 @@
   <!-- HEADER -->
   <nav class=" header navbar navbar-light bg-dark">
     Weather App
-    <a class="logout" href="/logout">Deconnexion</a>
+    <a class="logout" href="/users/logout">Deconnexion</a>
   </nav>
 
 
@@ -38,10 +43,12 @@
           </div>
         </form>
       </div>
+
       <div class="col-12 col-lg-6">
         <!--Map section-->
-        <img class="img-fluid" src="/images/map.png" alt="map provisoire">
+        <div id="worldmap"></div>
       </div>
+      
       <div class="col-12 col-lg-6">
         <!--City list section-->
         <% if(cityList.length==0){%>
@@ -51,7 +58,7 @@
               <a href="/refresh" type="button" class="btn btn-success">Refresh button </a>
 
               <% for(let i=0; i<cityList.length;i++){%>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class="list-group-item d-flex justify-content-between align-items-center" id="geoloc" data-long="<%= cityList[i].longitude  %> " data-name="<%=cityList[i].name%>" data-lat="<%= cityList[i].latitude  %> ">
                   <%=cityList[i].name%>
                     <div>
                       <%=cityList[i].description%>
@@ -75,6 +82,9 @@
     </div>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+  integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+  crossorigin=""></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -85,6 +95,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+    <script src="../javascript/script.js"></script>
+
 </body>
 
 </html>

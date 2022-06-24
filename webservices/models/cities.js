@@ -8,6 +8,8 @@ var citySchema = mongoose.Schema({
     icon: String,
     min: String,
     max: String,
+    longitude: Number,
+    latitude : Number
 
 })
 
