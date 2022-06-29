@@ -54,6 +54,14 @@ a {
 }
 
 #worldmap { 
-  height: 300px; 
+  height: 400px; 
   margin-bottom: 10px;
+  border: 1px solid black;
+}
+body{
+  background-color: #bef6f3;
+}
+
+li{
+  border-radius: 10%;
 }

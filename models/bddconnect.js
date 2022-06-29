@@ -7,4 +7,4 @@ var option = {
 
 }
 
-mongoose.connect('mongodb+srv://admin:9iT2H1RVP7pBX6aj@cluster0.zmk5l.mongodb.net/weatherapp?retryWrites=true&w=majority',)
+mongoose.connect('mongodb+srv://admin:0gVk03giK5HDsliu@cluster0.zmk5l.mongodb.net/weatherapp?retryWrites=true&w=majority',)

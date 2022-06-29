@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var request = require('sync-request')
 var cityModel = require('../models/cities')
-var usersModel = require('../models/users')
 var session = require('express-session')
 
 API_KEY = "75f0434a1c514d2c52b6e948018f2bae"
